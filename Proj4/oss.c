@@ -19,7 +19,7 @@ typedef struct{
 
 int main(int argc, const char * argv[]) {
     // generate a unique key for shared memory
-    key_t key = ftok("shared_mem_key", "R");\
+    key_t key = ftok("shared_mem_key", 15150);\
     
     // create shared memory
     int shmid = shmget(key, sizeof(Clock_t), IPC_CREAT|0666);
